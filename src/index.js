@@ -18,8 +18,9 @@ ReactDOM.render(<Router history={browserHistory}>
         <IndexRoute component={Login} />
         <Route path="/task/:user" component={TodaysTask} />
       </Route>
-    </Router>, document.getElementById('app-js'));
+    </Router>, document.getElementById('root'));
 
+module.hot.accept();
 
 /*
 
