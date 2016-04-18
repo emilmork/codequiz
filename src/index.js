@@ -1,24 +1,20 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Login = require('./components/Login');
+import Login from './components/login/Login';
 var TodaysTask = require('./components/TodaysTask');
 var { IndexRoute, Router, Route, browserHistory } = require('react-router');
+import { LookRoot, Presets } from 'react-look'
+import App from './components/App';
 
-const App = ({ children }) => {
-  return (
-    <div>
-      <div>Meny</div>
-      { children }
-    </div>
-  );
-};
-
-ReactDOM.render(<Router history={browserHistory}>
-      <Route path="/" component={App}>
-        <IndexRoute component={Login} />
-        <Route path="/task/:user" component={TodaysTask} />
-      </Route>
-    </Router>, document.getElementById('root'));
+ReactDOM.render(
+    <LookRoot>
+      <Router history={browserHistory}>
+        <Route path="/" component={App}>
+          <IndexRoute component={Login} />
+          <Route path="/tasks/:user" component={TodaysTask} />
+        </Route>
+      </Router>
+    </LookRoot>, document.getElementById('root'));
 
 module.hot.accept();
 

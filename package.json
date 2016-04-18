@@ -17,6 +17,7 @@
     "pouchdb": "^5.3.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
+    "react-look": "^1.0.0",
     "react-router": "^2.0.1"
   },
   "devDependencies": {
